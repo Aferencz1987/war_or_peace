@@ -193,19 +193,15 @@ class TurnTest < Minitest::Test
     player1 = Player.new("Megan", deck1)
     player2 = Player.new("Aurora", deck2)
     turn = Turn.new(player1, player2)
-    turn.pile_cards #the reason this has no assert_equal is because it is just
-    #a command method that I will create after the method is created. THEN in order
-    #to test that it worked, we check the spoils_of_war array to make sure what
-    #we wanted to have happen with turn.pile, happened correctly based on type of turn.
     turn.type
      winner = turn.winner
      turn.pile_cards
     assert_equal [card1, card2, card5, card4, card3, card6], turn.spoils_of_war
     assert_equal [card8], player1.deck.cards
-    assert_equal [card7, card1, card2, card5, card4, card3, card6], player2.deck.cards
-    turn.award_spoils(winner) #and then what's in the spoils_of_war array? NOTHING
-    #turn.pile_cards
-    assert_equal [], turn.spoils_of_war
+    # assert_equal [card7, card1, card2, card5, card4, card3, card6], player2.deck.cards
+    # turn.award_spoils(winner) #and then what's in the spoils_of_war array? NOTHING
+    # #turn.pile_cards
+    # assert_equal [], turn.spoils_of_war
   end
 
   def test_pile_cards_MAD
@@ -226,7 +222,7 @@ class TurnTest < Minitest::Test
       #a command method that I will create after the method is created. THEN in order
       #to test that it worked, we check the spoils_of_war array to make sure what
       #we wanted to have happen with turn.pile, happened correctly based on type of turn.
-      assert_equal [], turn.spoils_of_war()
+      assert_equal [], turn.spoils_of_war
       assert_equal deck1, player1.deck
       assert_equal deck2, player2.deck
   end
