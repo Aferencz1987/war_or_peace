@@ -5,22 +5,20 @@ class Deck
   end
 
   def rank_of_card_at(card) # no need to fill it with info from line 35 or 36!!! It is a place holder
-     return 0 if @cards[card] == nil
+    if @cards[card] == nil
+           return 0
+         else
     return @cards[card].rank
   end
 
+  end
+
   def high_ranking_cards
-    face_cards = [] #becasue it is an array line 49 needs brackets to house potential responses
-                    # even if it ends up with only 1 element returned it is the POTENTIAL to have many
-                    # that creates the need for the bracket
-    cards.each do |card|
-      require "pry"; binding.pry
-      if card.rank >= 11
-        face_cards.push card
+      @cards.find_all do |card|
+           card.rank >= 11
       end
     end
-    face_cards
-  end
+
 
   def percent_high_ranking
     ((high_ranking_cards.count / cards.count.to_f)*100).round(2)
