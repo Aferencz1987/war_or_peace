@@ -4,7 +4,7 @@ class Deck
       @cards = cards_argument
   end
 
-  def rank_of_card_at(card) # no need to fill it with info from line 35 or 36!!! It is a place holder
+  def rank_of_card_at(card)
     if @cards[card] == nil
            return 0
          else

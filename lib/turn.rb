@@ -64,30 +64,27 @@ class Turn
       @spoils_of_war
       3.times do
         spoils_of_war << player1.deck.remove_card
-        #spoils_of_war.push(player1.deck.cards[0])
       end
       3.times do
         spoils_of_war << player2.deck.remove_card
-      #spoils_of_war.push(player1.deck.cards[0])
       end
 
     else type == :mutually_assured_destruction
-      player1.deck.remove_card
-      player2.deck.remove_card
-    end
+        player1.deck.remove_card
+        player2.deck.remove_card
+      end
   end
 
   def award_spoils(winner)
       if winner == @player1
           spoils_of_war.each do |spoil|
-            player1.deck.cards << spoil
-          end
+          player1.deck.cards << spoil
+      end
           @spoils_of_war = []
-          #player1.deck.cards.push(spoils_of_war)
       else
           spoils_of_war.each do |spoil|
-            player2.deck.cards << spoil
-          end
+          player2.deck.cards << spoil
+      end
           @spoils_of_war = []
       end
   end
