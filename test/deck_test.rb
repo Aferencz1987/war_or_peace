@@ -43,7 +43,7 @@ class DeckTest < Minitest::Test
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
-    cards = [card1, card2, card3]
+    cards = [card2, card3, card1]
     deck = Deck.new(cards)
 
     assert_equal [card1,card3], deck.high_ranking_cards
@@ -66,11 +66,16 @@ class DeckTest < Minitest::Test
     card3 = Card.new(:heart, 'Ace', 14)
     cards = [card1, card2, card3]
     deck = Deck.new(cards)
-    assert_equal card1, deck.remove_card
+    assert_equal cards, deck.cards
+    deck.remove_card
     assert_equal [card2,card3], deck.cards
     assert_equal [card3], deck.high_ranking_cards
     assert_equal 50.0, deck.percent_high_ranking
   end
+  # line 69 has no brackets becasue it is defined on line 67.
+  # when testing methods you can test original state that the menthod
+  # will effect and then the command method and what the output/ new state
+  # looks. Example line 69-71.
 
   def test_add_card
     #skip

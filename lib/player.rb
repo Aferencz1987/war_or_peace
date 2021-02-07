@@ -1,7 +1,7 @@
 class Player
   attr_reader :name, :deck
-  def initialize(name, deck)
-    @name = name
+  def initialize(name_argument, deck_argument)
+    @name = name_argument
     @deck = deck
     @has_lost = false
   end
