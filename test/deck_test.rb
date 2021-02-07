@@ -16,7 +16,6 @@ class DeckTest < Minitest::Test
   end
 
   def test_it_has_readable_attributes
-    #skip
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
@@ -39,7 +38,6 @@ class DeckTest < Minitest::Test
   end
 
   def test_high_ranking_cards
-    #skip
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
@@ -50,7 +48,6 @@ class DeckTest < Minitest::Test
   end
 
   def test_percent_high_ranking
-    # skip
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
@@ -60,7 +57,6 @@ class DeckTest < Minitest::Test
   end
 
   def test_remove_card
-    #skip
     card1 = Card.new(:diamond, 'Queen', 12)
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
@@ -72,13 +68,8 @@ class DeckTest < Minitest::Test
     assert_equal [card3], deck.high_ranking_cards
     assert_equal 50.0, deck.percent_high_ranking
   end
-  # line 69 has no brackets becasue it is defined on line 67.
-  # when testing methods you can test original state that the menthod
-  # will effect and then the command method and what the output/ new state
-  # looks. Example line 69-71.
 
   def test_add_card
-    #skip
     card2 = Card.new(:spade, '3', 3)
     card3 = Card.new(:heart, 'Ace', 14)
     card4 = Card.new(:club, '5', 5)

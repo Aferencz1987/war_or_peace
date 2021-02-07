@@ -6,8 +6,6 @@ require './lib/card'
 class CardTest < Minitest::Test
   def test_it_exists
     card = Card.new(:diamond, 'Queen', 12)
-    # card.push("butt")
-    # require "pry"; binding.pry
     assert_instance_of Card, card
   end
 
@@ -25,5 +23,4 @@ class CardTest < Minitest::Test
     assert_equal 'Jack', card.value
     assert_equal 11, card.rank
   end
-  #require "pry"; binding.pry
 end
