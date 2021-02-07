@@ -1,8 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/pride'
-require './lib/card' ######do I need this??? It doesnt ask for it
-                        ###in the pry stuff
-
+require './lib/card'
 require './lib/deck'
 require './lib/player'
 
@@ -68,24 +66,3 @@ def test_player_has_lost
     assert_equal true, player.has_lost?
     assert_equal deck, player.deck
   end
-
-#  player.deck.remove_card
-# #=> #<Card:0x007f9cc3a73a98 @rank=12, @suit=:diamond, @value="Queen">
-#
-#  player.has_lost?
-# #=> false
-#
-#  player.deck.remove_card
-# #=> #<Card:0x007f9cc3a03720 @rank=3, @suit=:spade, @value="3">
-#
-#  player.has_lost?
-# #=> false
-#
-#  player.deck.remove_card
-# #=> #<Card:0x007f9cc3a44c98 @rank=14, @suit=:heart, @value="Ace">
-#
-#  player.has_lost?
-# #=> true
-#
-#  player.deck
-# #=> #<Deck:0x007f9cc396bdf8 @cards=[]>
